@@ -18,6 +18,8 @@ tags : [python, webpy, 装饰器]
         else:
             web.seeother('/signin')
 
+
+
 当页面比较少的时候，这样做并没什么问题。但是当页面多的时候，这种验证用户的代码会大量重复。这时python的装饰器就可以派上用场了。装饰器的解释可以参考这里[http://coolshell.cn/articles/11265.html](http://coolshell.cn/articles/11265.html)，这位老师讲解得非常透彻。在本文中，我们仅讨论装饰器在session验证中的妙用。
 
 首先，我们新写一个装饰器：
@@ -40,8 +42,10 @@ tags : [python, webpy, 装饰器]
 
 是不是瞬间变得非常简洁？！给处理函数GET加上need_check_session这个装饰器以后，每次调用GET前，都会首先调用装饰器函数检查用户的登录状态，而不必在GET函数里面检查用户是否登录了。同理如果有处理函数必须是在用户登录状态下才能执行（比如修改用户资料等），就只用加上这个装饰器就完事大吉啦。
 
-下面提供本示例的完整代码：  
+下面提供本示例的完整代码：
+
 [SessionWithDecorator.zip](/files/SessionWithDecorator.zip)
+
 [SessionWithoutDecorator.zip](/files/SessionWithoutDecorator.zip)
 
 Enjoy with python's decorator :)
