@@ -35,4 +35,10 @@ tags : [数据挖掘，pandas，python]
    np.issubdtype(column.dtype, np.number)
    ```
 
-7. ​
+7. 选择数据的某些列:
+
+   ```python
+   df[['col1','col2']]
+   ```
+
+   ​
